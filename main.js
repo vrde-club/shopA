@@ -2,13 +2,13 @@
 
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyCwgdBtHXEyUVLe9yP_la8IrN0qG2SYeFM",
-    authDomain: "vrde-admin.firebaseapp.com",
-    databaseURL: "https://vrde-admin.firebaseio.com",
-    projectId: "vrde-admin",
-    storageBucket: "",
-    messagingSenderId: "549162612019",
-    appId: "1:549162612019:web:8eaa67dae5a1304c43fa46"
+    apiKey: "AIzaSyCdklOqU0EcjNEWy8Cvv1KVIKyYAL-SsU0",
+    authDomain: "admina-8e76b.firebaseapp.com",
+    databaseURL: "https://admina-8e76b.firebaseio.com",
+    projectId: "admina-8e76b",
+    storageBucket: "admina-8e76b.appspot.com",
+    messagingSenderId: "526293543996",
+    appId: "1:526293543996:web:49fa7d8135faa957212739"
 };
 
 firebase.initializeApp(config);
@@ -70,6 +70,7 @@ var app = new Vue({
             this.productList = products;
         },
         getTotal: function () {
+
             var self = this;
             this.cartTotal = 0;
             this.cartItems = 0;
@@ -168,7 +169,7 @@ var app = new Vue({
                     self.saleComplete = true;
                 }
             });
-            
+
             database.ref('salesArchive/').push(sale, function (error) {
                 if (error) {
                     console.log(error)
@@ -181,7 +182,7 @@ var app = new Vue({
         //toggle category buttons
         setVisibility: function (type) {
             let p = document.getElementById("products");
-            scrollTo({top: p.offsetTop - 55, behavior:"smooth" });
+            scrollTo({ top: p.offsetTop - 55, behavior: "smooth" });
             this.search = '';
             for (var t in this.active) {
                 this.active[t].status = false;
@@ -260,14 +261,11 @@ const scrollToTop = () => {
 };
 const scrollTopProducts = () => {
     let p = document.getElementById("products");
-    scrollTo({top: p.offsetTop - 55, behavior:"smooth" });
+    scrollTo({ top: p.offsetTop - 55, behavior: "smooth" });
 };
 
 
 document.getElementById("js-top").onclick = function (e) {
     e.preventDefault();
     scrollToTop();
-}
-
-
-
+};
